@@ -36,8 +36,6 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
     renderNotes(notes, filters)
 })
 
-document.querySelector('#name-form').addEventListener('submit', e => {
-    e.preventDefault()
-    console.log(e.target.elements.firstName.value);
-    e.target.elements.firstName.value = ''
+document.querySelector('#for-fun').addEventListener('change', e => {
+    console.log(e.target.checked)
 })
