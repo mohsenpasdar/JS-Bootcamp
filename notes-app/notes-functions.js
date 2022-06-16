@@ -8,6 +8,13 @@ const getSavedNotes = () => {
         return []
     }
 }
+// Remove a note from the list
+const removeNote = (id) => {
+    const noteIndex = notes.findIndex(note => note.id === id)
+    if (noteIndex > -1) {
+        return notes.splice(noteIndex, 1)
+    }
+}
 
 // Save the notes to localStorage
 const saveNotes = (notes) => {
@@ -23,6 +30,11 @@ const generateNoteDOM = (note) => {
     // setup the remove note button 
     button.textContent = 'x'
     noteEl.appendChild(button)
+    button.addEventListener('click', () => {
+        removeNote(note.id)
+        saveNotes(notes)
+        renderNotes(notes, filters)
+    })
 
     // setup the note tiltle text
     if (note.title.length > 0) {

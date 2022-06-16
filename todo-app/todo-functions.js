@@ -36,6 +36,14 @@ const renderTodos = (todos, filters) => {
     })
 }
 
+// Remove a todo from the list
+const removeTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id)
+    if (todoIndex > -1) {
+        return todos.splice(todoIndex, 1)
+    }
+}
+
 // Get the DOM elements for an individual todo
 const generateTodoDOM = (todo) => {
     const todoEl = document.createElement('div')
@@ -56,6 +64,11 @@ const generateTodoDOM = (todo) => {
     // setup the remove button
     removeButton.textContent = 'x'    
     todoEl.appendChild(removeButton)
+    removeButton.addEventListener('click', () => {
+        removeTodo(todo.id)
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
 
     return todoEl
 }
