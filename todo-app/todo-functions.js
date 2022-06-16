@@ -39,9 +39,7 @@ const renderTodos = (todos, filters) => {
 // Remove a todo from the list
 const removeTodo = (id) => {
     const todoIndex = todos.findIndex(todo => todo.id === id)
-    if (todoIndex > -1) {
-        return todos.splice(todoIndex, 1)
-    }
+    return todos.splice(todoIndex, 1)
 }
 
 // Get the DOM elements for an individual todo
@@ -52,9 +50,14 @@ const generateTodoDOM = (todo) => {
     const removeButton = document.createElement('button')
 
     // setup todo checkbox
-    
     checkbox.setAttribute('type', 'checkbox')
+    checkbox.checked = todo.completed
     todoEl.append(checkbox)
+    checkbox.addEventListener('change', (e) => {
+        todo.completed = !todo.completed
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
 
     // setup the todo text
     todoText.textContent = todo.text
