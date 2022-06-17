@@ -59,3 +59,5 @@ const renderNotes = (notes, filters) => {
         document.querySelector('#notes').appendChild(noteEl)
     })
 }
+
+const mohsen = 'mohsen'
