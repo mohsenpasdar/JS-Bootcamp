@@ -60,4 +60,7 @@ const renderNotes = (notes, filters) => {
     })
 }
 
-const mohsen = 'mohsen'
+// Generate the last edited message
+const generateLastEdited = (timestamp) => {
+    return `Last edited ${moment(timestamp).fromNow()}`
+}
