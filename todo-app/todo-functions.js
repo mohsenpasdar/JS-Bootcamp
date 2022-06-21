@@ -25,9 +25,7 @@ const renderTodos = (todos, filters) => {
 
     document.querySelector('#todos').innerHTML = ''
 
-    const incompleteTodos = filteredTodos.filter(function (todo) {
-        return !todo.completed
-    })
+    const incompleteTodos = filteredTodos.filter((todo) => !todo.completed)
     
     document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
 
@@ -39,7 +37,10 @@ const renderTodos = (todos, filters) => {
 // Remove a todo from the list
 const removeTodo = (id) => {
     const todoIndex = todos.findIndex(todo => todo.id === id)
-    return todos.splice(todoIndex, 1)
+
+    if (todoIndex > -1) {
+        return todos.splice(todoIndex, 1)
+    }
 }
 
 // Get the DOM elements for an individual todo
