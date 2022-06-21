@@ -48,8 +48,29 @@ const generateNoteDOM = (note) => {
     return noteEl
 }
 
+// Sort your notes by one of three ways
+const sortNotes = (notes, sortBy) => {
+    if (sortBy === 'byEdited') {
+        return notes.sort((a, b) => b.updatedAt - a.updatedAt)
+    } else if (sortBy === 'byCreated') {
+        return notes.sort((a, b) => b.createdAt - a.createdAt)
+    } else if (sortBy === 'alphabetical') {
+        return notes.sort((a, b) => {
+            if (a.title.toLowerCase() < b.title.toLowerCase()) {
+                return -1
+            } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+    }
+
+}
+
 // Render application notes
 const renderNotes = (notes, filters) => {
+    notes = sortNotes(notes, filters.sortBy)
     const filteredNotes = notes.filter(note => note.title.toLowerCase().includes(filters.searchText.toLowerCase()))
 
     document.querySelector('#notes').innerHTML = ''
