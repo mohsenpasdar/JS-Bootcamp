@@ -11,7 +11,7 @@ Person.prototype.getBio = function () {
     this.likes.forEach(like => {
         bio += `${this.firstName} likes ${like}.`
     })
-    
+
     return bio
 }
 
@@ -22,7 +22,6 @@ Person.prototype.setName = function (fullName) {
 }
 
 const me = new Person('mohsen', 'pasdar', 33, ['football', 'walking'])
-console.log(me.getBio());
 me.setName('MOHsen PASdar')
 console.log(me.getBio());
 
