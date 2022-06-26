@@ -26,4 +26,4 @@ me.setName('MOHsen PASdar')
 console.log(me.getBio());
 
 const person2 = new Person('zahra', 'fathi', 29)
-console.log(person2.getBio());
+console.log(person2);
