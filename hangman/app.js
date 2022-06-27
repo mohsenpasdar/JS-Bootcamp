@@ -1,15 +1,13 @@
-const product = {
-    name: 'Influence'
-}
+const puzzleEl = document.querySelector('#puzzle')
+const guessesEl = document.querySelector('#guesses')
+const game1 = new Hangman('cat', 2)
 
-console.log(product);
+puzzleEl.textContent = game1.getPuzzle()
+guessesEl.textContent = game1.remainingGuesses
 
-const team = ['mohsen', 'zahra']
-
-console.log(team);
-
-const func = () => 1
-console.log(func);
-
-const string1 = new String('phone')
-console.log(string1);
+window.addEventListener('keypress', (e) => {
+    const guess = e.key
+    game1.makeGuess(guess)
+    puzzleEl.textContent = game1.getPuzzle()
+    guessesEl.textContent = game1.remainingGuesses
+})

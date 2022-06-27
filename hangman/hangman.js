@@ -25,14 +25,3 @@ Hangman.prototype.makeGuess = function (guess) {
     }
 }
 
-const game1 = new Hangman('cat', 2)
-
-console.log(game1.getPuzzle());
-console.log(game1.remainingGuesses);
-
-window.addEventListener('keypress', (e) => {
-    const guess = String.fromCharCode(e.charCode)
-    game1.makeGuess(guess)
-    console.log(game1.getPuzzle());
-    console.log(game1.remainingGuesses);
-})
