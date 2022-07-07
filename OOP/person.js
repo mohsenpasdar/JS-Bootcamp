@@ -21,9 +21,33 @@ class Person {
     }
 }
 
-const me = new Person('mohsen', 'pasdar', 33, ['football', 'walking'])
-me.setName('MOHsen PASdar')
-console.log(me.getBio());
+class Employee extends Person {
+    constructor(firstName, lastName, age, position, likes = []) {
+        super(firstName, lastName, age, likes = [])
+        this.position = position
+    }
+    getBio() {
+        return `${this.firstName} ${this.lastName} is a(n) ${this.position}.`
+    }
+    getYearsLeft() {
+        return 60 - this.age
+    }
+}
 
-const person2 = new Person('zahra', 'fathi', 29)
-console.log(person2);
+class Student extends Person {
+    constructor(firstName, lastName, age, grade, likes = []) {
+        super(firstName, lastName, age, likes = [])
+        this.grade = grade
+    }
+    getBio() {
+        return this.grade >= 70 ? `${this.firstName} is passing the class.` : `${this.firstName} is failing the class.`
+    }
+    updateGrade(change) {
+        this.grade += change
+    }
+}
+
+const student = new Student('Mohsen', 'Pasdar', 33, 73, ['footbal'])
+console.log(student.getBio());
+student.updateGrade(-5)
+console.log(student.getBio());
