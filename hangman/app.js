@@ -13,7 +13,7 @@ window.addEventListener('keypress', (e) => {
     }
 })
 
-getPuzzle((error, puzzle) => {
+getPuzzle('1', (error, puzzle) => {
     if (error) {
         console.log(`Error: ${error}`);
     } else {
@@ -21,9 +21,12 @@ getPuzzle((error, puzzle) => {
     }
 })
 
-// const puzzle = getPuzzleSync()
-// console.log(puzzle);
-
-// console.log('do sth else');
+getCountry('AF', (error, country) => {
+    if (error) {
+        console.log(`Error: ${error}`);
+    } else {
+        console.log(country.name.official);
+    }
+})
 
 
