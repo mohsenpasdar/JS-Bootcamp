@@ -20,3 +20,10 @@ getPuzzle((error, puzzle) => {
         console.log(puzzle);
     }
 })
+
+// const puzzle = getPuzzleSync()
+// console.log(puzzle);
+
+// console.log('do sth else');
+
+
