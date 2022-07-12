@@ -13,20 +13,16 @@ window.addEventListener('keypress', (e) => {
     }
 })
 
-getPuzzle('1', (error, puzzle) => {
-    if (error) {
-        console.log(`Error: ${error}`);
-    } else {
-        console.log(puzzle);
-    }
+const myPuzzle = getPuzzle('4').then((puzzle) => {
+    console.log(puzzle);
+}, (err) => {
+    console.log(`Error: ${err}`);
 })
 
-getCountry('AF', (error, country) => {
-    if (error) {
-        console.log(`Error: ${error}`);
-    } else {
-        console.log(country.name.official);
-    }
+getCountry('EG').then((country) => {
+    console.log(country.name.official);
+}, (err) => {
+    console.log(`Error: ${err}`);
 })
 
 
