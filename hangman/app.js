@@ -13,13 +13,15 @@ window.addEventListener('keypress', (e) => {
     }
 })
 
-getPuzzle(4).then((puzzle) => {
+getPuzzle(2).then((puzzle) => {
     console.log(puzzle);
 }).catch((err) => {
     console.log(`Error: ${err}`);
 })
 
-getCountry('IR').then((country) => {
+getLocation().then((location) => {
+    return getCountry(location.country)
+}).then((country) => {
     console.log(country.name.official);
 }).catch((err) => {
     console.log(`Error: ${err}`);
