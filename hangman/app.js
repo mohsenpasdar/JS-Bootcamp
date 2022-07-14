@@ -13,16 +13,28 @@ window.addEventListener('keypress', (e) => {
     }
 })
 
-const myPuzzle = getPuzzle('4').then((puzzle) => {
+getPuzzle(4).then((puzzle) => {
     console.log(puzzle);
-}, (err) => {
+}).catch((err) => {
     console.log(`Error: ${err}`);
 })
 
-getCountry('EG').then((country) => {
-    console.log(country.name.official);
-}, (err) => {
-    console.log(`Error: ${err}`);
-})
+// getCountry('EG').then((country) => {
+//     console.log(country.name.official);
+// }, (err) => {
+//     console.log(`Error: ${err}`);
+// })
+
+// fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+//     if (response.status === 200) {
+//         return response.json()
+//     } else {
+//         throw new Error('unable to fetch the data')
+//     }
+// }).then((data) => {
+//     console.log(data.puzzle);
+// }).catch((err) => {
+//     console.log(err);
+// })
 
 
