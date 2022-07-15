@@ -31,3 +31,9 @@ const getCurrentCountry = async () => {
     const location = await getLocation()
     return getCountry(location.country)
 }
+
+// getCurrentCountry().then(country => {
+//     console.log(country.name.official);
+// }).catch(error => {
+//     console.log(error);
+// })
