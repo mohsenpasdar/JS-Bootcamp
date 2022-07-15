@@ -13,3 +13,5 @@ const data = {
 data.location = '   Tehran    '
 data.location = ' Shiraz'
 console.log(data);
+console.log(data.location);
+console.log(data._location);
