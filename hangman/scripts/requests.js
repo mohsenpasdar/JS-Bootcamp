@@ -18,7 +18,7 @@ const getCountry = async (countryCode) => {
     }
 }
 
-getLocation = async () => {
+const getLocation = async () => {
     const response = await fetch ('//ipinfo.io/json?token=48d1a33b27d208', {})
     if (response.status === 200) {
         return response.json()
