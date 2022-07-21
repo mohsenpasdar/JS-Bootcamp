@@ -1,3 +1,3 @@
-const name = 'mohsen pasdar'
+const name = 'Mohsen Pasdar2'
 
-console.log('mohsen');
+console.log(name);
