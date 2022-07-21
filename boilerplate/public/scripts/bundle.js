@@ -1,5 +1,5 @@
 'use strict';
 
-var name = 'Mohsen Pasdar2';
+var name = 'Mohsen Pasdar';
 
 console.log(name);
