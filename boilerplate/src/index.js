@@ -1,3 +1,7 @@
-const name = 'Mohsen Pasdar'
+import { add } from './utilities'
+import { scream } from './scream'
 
-console.log(name);
+console.log('index.js');
+
+console.log(add(2, 3));
+console.log(scream('mohsen'));
